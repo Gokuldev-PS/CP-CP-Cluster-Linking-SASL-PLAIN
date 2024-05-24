@@ -1,0 +1,26 @@
+apiVersion: platform.confluent.io/v1beta1
+kind: ClusterLink
+metadata:
+  name: clusterlinkus-demo
+  namespace: destination
+  annotations:
+    platform.confluent.io/http-timeout-in-seconds: "200"
+
+spec:
+  destinationKafkaCluster:
+    kafkaRestClassRef:
+      name: destination-kafka-rest
+      namespace: destination
+  sourceKafkaCluster:
+    bootstrapEndpoint: kafka.source.svc.cluster.local:9071
+    authentication:
+      type: plain
+      jaasConfig:
+        secretRef: credential
+    
+      
+    kafkaRestClassRef:
+      name: source-kafka-rest
+      namespace: source
+  mirrorTopics:
+  - name: demo

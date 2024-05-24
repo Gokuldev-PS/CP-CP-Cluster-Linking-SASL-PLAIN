@@ -71,7 +71,7 @@ kubectl -n destination create secret generic password-encoder-secret \
 After the Kafka cluster is in running state, create cluster link between source and destination. Cluster link will be created in the destination cluster
 
 #### create clusterlink between source and destination
-    kubectl apply -f $TUTORIAL_HOME/clusterlink-sasl-plain.yaml
+    kubectl apply -f $TUTORIAL_HOME/clusterlink-sasl-plaintext.yaml
 ### Run test
 
 #### exec into source kafka pod

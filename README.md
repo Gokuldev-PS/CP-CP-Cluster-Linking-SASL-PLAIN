@@ -4,9 +4,9 @@
 In this example, both source and destination kafka are run in SASL_PLAIN mode
 
 ## Set up Pre-requisites
-
+```
 export TUTORIAL_HOME=<Tutorial directory>/CP-CP-Cluster-Linking-SASL-PLAIN
-
+```
 Create two namespaces, one for the source cluster components and one for the destination cluster components.
 Note:: in this example, only deploy zookeeper and kafka for source and zookeeper, kafka and connect for destination
 
